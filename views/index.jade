@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to #{title}
+
+	div(ng-app='exampleApp')
+		div(id='mainView',ng-controller='jsonCtrl')
+			div(class='jsonView')
+				json(child='jsonData',default-collapsed='false',type='object')
+
+			button(id='save',ng-click='saveJson()')
+				| Save changes
